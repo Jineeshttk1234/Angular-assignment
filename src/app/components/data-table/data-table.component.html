@@ -1,0 +1,26 @@
+<div class="table-container" *ngIf="data?.length; else noData">
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of data">
+        <td>{{ emp.firstName }}</td>
+        <td>{{ emp.lastName }}</td>
+        <td>{{ emp.address }}</td>
+        <td>{{ emp.phone }}</td>
+        <td>{{ emp.position }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #noData>
+  <p class="no-data">No records found.</p>
+</ng-template>
